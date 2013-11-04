@@ -1,4 +1,8 @@
-<%= form_for(@question) do |f| %>
+<% if @questions.empty? %>
+  <p id="no-questions">No questions have been asked yet; why don't you ask the first? </p>
+<% end %>
+
+<%= form_for(@question, html: {id: "new-question-form"}) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
