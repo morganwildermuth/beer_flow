@@ -1,6 +1,6 @@
 BeerFlow::Application.routes.draw do
 
-  resources :users, only: [:create, :show]
+  resources :users, only: [:create]
   get 'signup', to: 'users#new', as: 'new_user'
 
   resources :questions, only: [:new, :create, :show, :index]
