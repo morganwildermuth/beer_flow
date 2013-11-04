@@ -1,0 +1,8 @@
+#question-title, 
+#question-body{
+  text-align: center;
+}
+
+#question-title{
+  font-weight:bold;
+}
