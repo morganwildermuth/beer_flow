@@ -1,7 +1,10 @@
-<ul class="questions-list">
-	<% @questions.each do |question| %>
-		<li class="question"><%= link_to question.title, question_path(question) %></li>
-	<% end %>
-</ul>
-
+<% if @questions.empty? %>
+  <p id="no_questions">No questions have been asked yet; why don't you ask the first? </p>
+<% else %>
+  <ul class="questions-list">
+  	<% @questions.each do |question| %>
+  		<li class="question"><%= link_to question.title, question_path(question) %></li>
+  	<% end %>
+  </ul>
+<% end %>
 <%= button_to "New Question", new_question_path, method: :get %>
