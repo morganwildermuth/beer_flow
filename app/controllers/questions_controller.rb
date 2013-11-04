@@ -15,6 +15,11 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    if !(current_user.nil?)
+      @questions = Question.all
+      render :index and return
+    else
+      redirect_to new_session_path and return
+    end
   end
 end
